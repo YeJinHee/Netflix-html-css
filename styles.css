@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+} /* * = 모든 요소에 적용 */
+
+body {
+    background-color: #111;
+}
+
+/* header */
+
+.navbar {
+    background-color: #111;
+    position: fixed;
+    top: 0; /*가장 위에*/
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between; 
+    /* space-between 사용해서 양쪽으로 가게 수정
+    기존엔 space-around 였음 */
+    align-items: center;    
+    flex-wrap: wrap; /*크기 줄어들면 아래로 내려감*/
+}
+
+
+.navbar ul {
+    display: flex; /*왼쪽에서 오른쪽으로 가게 함*/
+    align-items: center;
+    flex-wrap: wrap; /*크기 줄어들면 아래로 내려감*/
+}
+
+.navbar li {
+    list-style: none;
+    padding: 1rem;
+}
+
+.navbar li a {
+    padding: 2px 2px;
+    text-decoration: none; /*데코 제거*/
+    color: #fff;
+}
+
+.navbar li a:hover {
+    color: gray;
+}
+
+.user{
+    height: 45px;
+    width: 45px;
+    margin-right: 50px;
+}
+
+.logo {
+    height: 45px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.logo img {
+    width: 100%;
+}
+
+/* banner */
+
+.banner {
+    background-image: url("images/banner.jpg");
+    background-size: cover;
+    /*background-repeat 도 있음*/
+    background-position: center;
+    height: 448px;
+    color: white;
+}
+
+
+.banner_contents {
+    margin-left: 30px;
+    padding-top: 190px;
+    height: 190px;
+}
+
+.banner_title {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-bottom: 0.3rem;
+}
+
+.banner_btn {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.banner_btn button {
+    width: 60px;
+    height: 30px;
+    color: #111;
+    border-radius: 2px;
+    border: 1px solid transparent;
+}
+
+.banner_btn button:hover {
+    background-color: rgb(171, 163, 163);
+    cursor: pointer;
+}
+
+.banner_description {
+    line-height: 1.5;
+    padding-top: 0.5rem;
+    font-size: 1rem;
+}
+
+/* row */
+
+.row {
+    color: white;
+}
+
+.row h2 {
+    color: white;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.row_posters {
+    display: flex; /*왼쪽에서 오른쪽으로 가게 함*/
+    overflow-y: hidden;
+    overflow-x: scroll; /*자바스크립트 사용하면 스크롤 가능*/
+    padding: 20px;
+}
+
+
+.row_poster {
+    width: 100%;
+    object-fit: contain;
+    max-height: 100px;
+    margin-right: 10px;
+    transition: transform 450ms;
+    /*변화가 얼마나 일어날지. 이거 하면 자연스럽게 사진이 커짐*/
+}
+
+.row_poster:hover {
+    transform: scale(1.1); /* 사진 크기를 얼마나 커지게 하나 */
+}
+
+.row_posters::-webkit-scrollbar {
+    display: none; /*스크롤바 뜨는 거 제거*/
+}
+
+.row_posterLarge {
+    max-height: 250px;
+    /*라지 사진 크기 지정*/
+}
